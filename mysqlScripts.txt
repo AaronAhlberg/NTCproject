@@ -1,0 +1,45 @@
+#create exam table#
+create table exam 
+( examId varchar(30) primary key,
+	examName varchar(30) NOT NULL);
+    
+#create testing center table#
+create table testing_center(
+centerId varchar(30) PRIMARY KEY,
+addressLine1 varchar(30) NOT NULL,
+addressLine2 varchar(30),
+unit varchar (10),
+zipcode varchar(10),
+city varchar(50),
+region varchar(50),
+country varchar(56),
+phone  varchar(30)
+);    
+
+#appointment tables#
+create table appointments(
+appointmentId varchar(30) primary key,
+candidateId varchar(30),
+sessionId varchar(30),
+foreign key ( sessionId ) references exam_session ( sessionId ),
+foreign key ( candidateId ) references candidate( candidateId )
+);
+
+#exam sessions table#
+create table exam_session (
+sessionId varchar(30) primary key, 
+examId varchar(30),
+centerId varchar(30),
+testDate date not null,
+startTime time not null,
+endTime time not null,
+foreign key ( examId ) references exam(examId),
+foreign key ( centerId ) references testing_center( centerId )
+);
+
+#candidates table#
+create table candidate
+(
+candidateId varchar(30) primary key,
+name varchar(30)
+);
