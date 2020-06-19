@@ -28,3 +28,4 @@ A list of all appointments are displayed at the bottom of the page and updates e
 \
 #Appointment table showing newly created appointment\
 ![](https://github.com/AaronAhlberg/NTCproject/blob/master/Images/appointment%20added.PNG)
+
